@@ -1,0 +1,51 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px 40px;
+    background: #00ac0d;
+    color: white;
+    position: fixed;
+    width: -webkit-fill-available;
+    z-index: 99;
+
+    &-text-link {
+        display: flex;
+        align-items: baseline;
+        gap: 40px;
+
+        a {
+            text-decoration: unset;
+            color: white;
+        }
+    }
+
+    &-search {
+        input {
+            height: 20px;
+            padding: 5px 15px;
+            outline: none;
+            margin-right: 10px;
+        }
+        button {
+            height: 32px;
+            width: 80px;
+            border-radius: 5px;
+            border: 0px;
+            cursor: pointer;
+        }
+        button:disabled {
+            cursor: no-drop;
+        }
+        button:hover {
+            background: #006c09;
+            color: white;
+        }
+    }
+}
+
+.footer {
+    padding: 30px 200px;
+    background: #003f05;
+    color: white;
+}

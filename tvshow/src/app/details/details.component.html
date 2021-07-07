@@ -1,17 +1,19 @@
-<app-back></app-back>
-<div>
-    <a href="popular">Home</a> / Show
-</div>
-<div class="details">
-    <img src="{{showDetails.image.original}}" alt="">
-    <div>
-        <div>{{showDetails.name}}</div>
-        <div><strong>IMDB Rating:</strong>{{showDetails.rating.average}}</div>
-        <div><strong>Premiered On:</strong>{{showDetails.premiered}}</div>
-        <div><strong>Type: </strong>{{showDetails.type}}</div>
-        <div><strong>Genres: </strong>{{showDetails.genres}}</div>
-        <div><strong>Status: </strong>{{showDetails.status}}</div>
-        <div><strong>Runtine: </strong>{{showDetails.runtime}}</div>
-        <div><strong>Summary: </strong>{{showDetails.summary}}</div>
+<div *ngIf="showDetails" class="details-container">
+    <div class="back-breadcrums">
+        <button mat-raised-button (click)="back()">Back</button>
+        <a href="popular">Home (Popular Shows)</a> / <span>{{showDetails.name}}</span>
+    </div>
+    <div class="details">
+        <img src="{{showDetails.image.original}}" alt="">
+        <div class="details-text">
+            <h2>{{showDetails.name}}</h2>
+            <div> <i>IMDB Rating: </i>{{showDetails.rating.average}}/10</div>
+            <div> <i>Premiered On: </i>{{showDetails.premiered}}</div>
+            <div> <i>Type: </i>{{showDetails.type}}</div>
+            <div> <i>Genres: </i>{{showDetails.genres}}</div>
+            <div> <i>Status: </i>{{showDetails.status}}</div>
+            <div> <i>Runtine: </i>{{showDetails.runtime}} minutes</div>
+            <div><span [innerHTML]="showDetails.summary"></span></div>
+        </div>
     </div>
 </div>

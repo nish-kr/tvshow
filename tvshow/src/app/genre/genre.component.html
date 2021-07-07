@@ -1,8 +1,14 @@
-<h2> {{genreName}}</h2>
 <div class="genres">
-    <div *ngIf="shows.length>5" class="prev-next">
-        <button *ngIf="showPrev" (click)="prev()">Prev</button>
-        <button *ngIf="showNext" (click)="next()">Next</button>
+    <div class="genres-header">
+        <h2> {{genreName}}</h2>
+        <div *ngIf="shows.length>5" class="prev-next">
+            <button mat-icon-button class="prev" [disabled]="!startIndex" (click)="prev()">
+                <mat-icon>navigate_before</mat-icon>
+            </button>
+            <button mat-icon-button class="next" [disabled]="endIndex === shows.length" (click)="next()">
+                <mat-icon>navigate_next</mat-icon>
+            </button>
+        </div>
     </div>
     <app-show-card [showsArr]="shows.slice(startIndex,endIndex)"></app-show-card>
 </div>

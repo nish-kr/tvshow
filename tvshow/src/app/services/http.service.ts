@@ -12,12 +12,14 @@ export class HttpService {
   ) { }
 
   /**
-   * 
+   * Get Method to return an HTTP Observable Object to be used in components
    * @param url URL for the API call
    * @returns Returns an Observable Object
    */
   public get(url: string, query?: string) {
     let getUrl = '';
+
+    // Changing the URL based on params
     if (query) {
       getUrl = this.TVSHOW_BASEURL + url + '/' + query;
     } else {

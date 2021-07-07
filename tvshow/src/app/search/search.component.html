@@ -1,15 +1,17 @@
-<app-back></app-back>
-<h1>Search Results</h1>
-<div class="cards" *ngIf="searchResult">
-    <div *ngFor="let show of searchResult; let i = index">
-        <div (click)="getShowDetails(show)" class="result">
-            <div>
-                <img *ngIf="show.show.image" src="{{show.show.image.medium}}" alt="">
-            </div>
-            <div>
-                <div>{{show.show.name}}</div>
-                <div>{{show.show.rating.average}}</div>
-                <div>{{show.show.premiered}}</div>
+<div class="search-container">
+    <a href="popular">Home (Popular Shows)</a> / <span>Search Results</span>
+    <h1>Search Results</h1>
+    <div class="cards" *ngIf="searchResult">
+        <div *ngFor="let show of searchResult; let i = index">
+            <div (click)="setShowDetails(show)" class="result">
+                <div>
+                    <img *ngIf="show.show.image" src="{{show.show.image.medium}}" alt="">
+                </div>
+                <div class="details">
+                    <h1>{{show.show.name}}</h1>
+                    <h2>IMDB: {{show.show.rating.average}}/10</h2>
+                    <h2>Premiered on: {{show.show.premiered}}</h2>
+                </div>
             </div>
         </div>
     </div>

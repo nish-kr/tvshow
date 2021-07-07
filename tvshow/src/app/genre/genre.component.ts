@@ -13,43 +13,38 @@ export class GenreComponent implements OnInit {
   startIndex: number = 0;
   endIndex: number = 0;
 
-  showNext: boolean = true;
-  showPrev: boolean = true;
-
   constructor() { }
 
   ngOnInit(): void {
-    if (this.shows.length > 5 && this.endIndex - this.startIndex < 5) {
+    if (this.shows.length < 5) {
+      this.endIndex = this.shows.length;
+    } else {
       this.endIndex = 5;
     }
-
-    if (this.endIndex - this.startIndex < 5) {
-      this.showNext = false;
-    }
-
-    // if (this.startIndex === 0) {
-    //   this.showPrev = false;
-    // }
   }
 
+  /**
+   * Function ot jump to previous 5 shows on the list of shows
+   */
   prev() {
-    if (this.startIndex - 5 > 0) {
-      this.startIndex -= 5;
-      this.endIndex -= 5;
-    } else {
+    this.startIndex -= 5;
+    this.endIndex -= 5;
+    if (this.startIndex < 0) {
       this.startIndex = 0;
       this.endIndex = 5;
     }
   }
 
+  /**
+   * Function ot jump to next upto 5 shows on the list of shows
+   */
   next() {
-    if (this.shows.length > 5 && this.endIndex !== this.shows.length) {
+    if (this.endIndex >= this.shows.length) {
+      this.startIndex = this.shows.length - 6;
+      this.endIndex = this.shows.length - 1;
+    } else {
       this.startIndex += 5;
-      if (this.endIndex + 5 > this.shows.length) {
-        this.endIndex = this.shows.length;
-      } else {
-        this.endIndex += 5;
-      }
+      this.endIndex += 5;
     }
   }
 }

@@ -11,7 +11,9 @@ import { ShowCardComponent } from './show-card/show-card.component';
 import { SearchComponent } from './search/search.component';
 import { GenreComponent } from './genre/genre.component';
 import { FormsModule } from '@angular/forms';
-import { BackComponent } from './back/back.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatIconModule } from '@angular/material/icon';
+import { MatButtonModule } from '@angular/material/button';
 
 @NgModule({
   declarations: [
@@ -20,14 +22,16 @@ import { BackComponent } from './back/back.component';
     DetailsComponent,
     ShowCardComponent,
     SearchComponent,
-    GenreComponent,
-    BackComponent
+    GenreComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    BrowserAnimationsModule,
+    MatIconModule,
+    MatButtonModule
   ],
   providers: [HttpService],
   bootstrap: [AppComponent]

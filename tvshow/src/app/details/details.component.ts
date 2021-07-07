@@ -14,18 +14,15 @@ export class DetailsComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
+
+    // Getting show details from local storage and parsing it into an object
     this.showDetails = JSON.parse(localStorage.getItem('show') as string);
-    // this.getShowDetails('1');
   }
 
-  getShowDetails = (showId: string) => {
-    this.http.get('shows', showId).subscribe(
-      res => {
-        console.log(res);
-      },
-      err => {
-        console.log(err);
-      }
-    )
+  /**
+   * Back function to return to previous screen on the browser
+   */
+  back() {
+    window.history.back();
   }
 }

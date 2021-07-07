@@ -1,3 +1,21 @@
 .result {
     display: flex;
+    align-items: center;
+    gap: 50px;
+    padding: 30px 0px;
+    border-bottom: 1px solid;
+    cursor: pointer;
+}
+.search-container {
+    padding: 120px 120px;
+    background: #003f05;
+    color: white;
+
+    a {
+        text-decoration: unset;
+        color: #00ac0d;
+    }
+}
+img {
+    width: 200px;
 }

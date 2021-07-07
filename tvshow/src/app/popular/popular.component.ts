@@ -12,17 +12,18 @@ export class PopularComponent implements OnInit {
   listOfShows: any[] = [];
   showBasedOnGenres: any = {};
   genres: string[] = [];
-  searchQuery: string = '';
-  searchResult: any;
+
   constructor(
-    private http: HttpService,
-    private router: Router
+    private http: HttpService
   ) { }
 
   ngOnInit(): void {
     this.getAllShows();
   }
 
+  /**
+   * Function to get all shows at the start of the application
+   */
   getAllShows = () => {
     this.http.get('shows').subscribe(
       res => {
@@ -37,6 +38,9 @@ export class PopularComponent implements OnInit {
     )
   }
 
+  /**
+   * Function to arrange all shows based on Genre's in ascending order of show ratings
+   */
   getShowsOnGenres = () => {
     this.listOfShows.forEach(show => {
       show.genres.forEach((genre: string) => {
@@ -49,23 +53,8 @@ export class PopularComponent implements OnInit {
     });
     Object.keys(this.showBasedOnGenres).forEach(genre => {
       this.genres.push(genre);
-      this.showBasedOnGenres[genre].sort((a: any, b: any) => b.weight - a.weight);
+      this.showBasedOnGenres[genre].sort((a: any, b: any) => b.rating.average - a.rating.average);
     })
-    // console.log(this.showBasedOnGenres);
+    console.log(this.showBasedOnGenres);
   }
-
-  search() {
-    this.http.get('search', 'shows?q=' + this.searchQuery).subscribe(
-      res => {
-        this.searchResult = res;
-        console.log(this.searchResult);
-        localStorage.setItem('searchResult', JSON.stringify(this.searchResult));
-        this.router.navigateByUrl('search-result');
-      },
-      err => {
-        console.log(err);
-      }
-    )
-  }
-
 }

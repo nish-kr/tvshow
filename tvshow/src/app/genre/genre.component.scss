@@ -1,4 +1,16 @@
 .prev-next {
     display: flex;
     justify-content: flex-end;
+
+    .prev {
+        margin-right: 10px;
+    }
+}
+
+.genres {
+    &-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
 }

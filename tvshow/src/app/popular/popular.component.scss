@@ -1,5 +1,10 @@
-.header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+.popular-shows {
+    padding: 130px 120px 50px 120px;
+    background: #003f05;
+    color: white;
+
+    &-genre {
+        padding-bottom: 40px;
+        border-bottom: 1px solid;
+    }
 }

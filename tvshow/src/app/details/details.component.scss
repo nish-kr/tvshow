@@ -1,6 +1,27 @@
-.details {
-    display: flex;
-    img {
-        width: 300px;
+.details-container {
+    padding: 120px 120px;
+    background: #003f05;
+    color: white;
+
+    .back-breadcrums {
+        a {
+            text-decoration: unset;
+            color: #00ac0d;
+            margin-left: 20px;
+        }
+    }
+
+    .details {
+        margin-top: 20px;
+        display: flex;
+        img {
+            width: 500px;
+        }
+        &-text {
+            margin-left: 40px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
     }
 }
