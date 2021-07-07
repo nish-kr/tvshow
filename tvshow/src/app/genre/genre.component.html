@@ -1,0 +1,8 @@
+<h2> {{genreName}}</h2>
+<div class="genres">
+    <div *ngIf="shows.length>5" class="prev-next">
+        <button *ngIf="showPrev" (click)="prev()">Prev</button>
+        <button *ngIf="showNext" (click)="next()">Next</button>
+    </div>
+    <app-show-card [showsArr]="shows.slice(startIndex,endIndex)"></app-show-card>
+</div>

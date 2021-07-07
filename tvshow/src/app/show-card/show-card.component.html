@@ -1,0 +1,10 @@
+<div class="cards">
+    <div *ngFor="let show of showsArr; let i = index">
+        <div (click)="getShowDetails(show)">
+            <img src="{{show.image.medium}}" alt="">
+            <div>{{show.name}}</div>
+            <div>{{show.rating.average}}</div>
+            <div>{{show.premiered}}</div>
+        </div>
+    </div>
+</div>
