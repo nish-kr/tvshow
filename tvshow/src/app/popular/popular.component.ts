@@ -55,6 +55,5 @@ export class PopularComponent implements OnInit {
       this.genres.push(genre);
       this.showBasedOnGenres[genre].sort((a: any, b: any) => b.rating.average - a.rating.average);
     })
-    console.log(this.showBasedOnGenres);
   }
 }

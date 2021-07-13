@@ -40,8 +40,8 @@ export class GenreComponent implements OnInit {
    */
   next() {
     if (this.endIndex >= this.shows.length) {
-      this.startIndex = this.shows.length - 6;
-      this.endIndex = this.shows.length - 1;
+      this.startIndex = this.shows.length - 5;
+      this.endIndex = this.shows.length;
     } else {
       this.startIndex += 5;
       this.endIndex += 5;

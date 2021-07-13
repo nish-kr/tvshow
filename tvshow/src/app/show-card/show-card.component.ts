@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { SharedService } from '../services/shared.service';
 
 @Component({
   selector: 'app-show-card',
@@ -8,21 +9,21 @@ import { Router } from '@angular/router';
 })
 export class ShowCardComponent implements OnInit {
 
-  @Input() showsArr: any;
+  @Input() showsArr: any[] = [];
 
   constructor(
-    private router: Router
+    private router: Router,
+    private shared: SharedService
   ) { }
 
   ngOnInit(): void { }
 
   /**
-   * Function to pass on show details via local storage and navigate to details page
+   * Function to pass on show details via shared service and navigate to details page
    * @param showDetails Details of the individual show
    */
   getShowDetails = (showDetails: any) => {
-    console.log(showDetails);
-    localStorage.setItem('show', JSON.stringify(showDetails));
+    this.shared.nextShowId(showDetails.id);
     this.router.navigateByUrl('details');
   }
 }

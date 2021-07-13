@@ -10,10 +10,22 @@
     padding: 120px 120px;
     background: #003f05;
     color: white;
+    min-height: -webkit-fill-available;
 
     a {
         text-decoration: unset;
         color: #00ac0d;
+    }
+
+    .no-results {
+        font-size: 80px;
+        line-height: 80px;
+        height: -webkit-fill-available;
+        margin-top: 100px;
+        text-align: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
 }
 img {

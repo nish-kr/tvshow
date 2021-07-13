@@ -5,6 +5,10 @@
     .prev {
         margin-right: 10px;
     }
+
+    button:disabled {
+        cursor: no-drop;
+    }
 }
 
 .genres {
