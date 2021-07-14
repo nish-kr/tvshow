@@ -5,7 +5,7 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root'
 })
 export class HttpService {
-  private TVSHOW_BASEURL = ' https://api.tvmaze.com/';
+  private TVSHOW_BASEURL = 'https://api.tvmaze.com/';
 
   constructor(
     private http: HttpClient,
@@ -13,17 +13,17 @@ export class HttpService {
 
   /**
    * Get Method to return an HTTP Observable Object to be used in components
-   * @param url URL for the API call
+   * @param path URL for the API call
    * @returns Returns an Observable Object
    */
-  public get(url: string, query?: string) {
+  public get(path: string, query?: string) {
     let getUrl = '';
 
     // Changing the URL based on params
     if (query) {
-      getUrl = this.TVSHOW_BASEURL + url + '/' + query;
+      getUrl = this.TVSHOW_BASEURL + path + '/' + query;
     } else {
-      getUrl = this.TVSHOW_BASEURL + url;
+      getUrl = this.TVSHOW_BASEURL + path;
     }
     return this.http.get(getUrl);
   }

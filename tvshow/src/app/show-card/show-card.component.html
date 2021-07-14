@@ -1,9 +1,9 @@
-<div *ngIf="showsArr" class="card-container">
-    <div class="card" *ngFor="let show of showsArr; let i = index">
+<div *ngIf="shows" class="card-container">
+    <div class="card" *ngFor="let show of shows; let i = index">
         <div class="inside-card" (click)="getShowDetails(show)">
-            <img class="show-img" src="{{show.image.medium}}" alt="">
+            <img class="show-img" src="{{show.image.medium}}" alt="show-image">
             <div class="show-name"><strong>{{show.name}}</strong></div>
-            <div class="rating"><img class="imdb-img" src="assets/images/imdb.png" alt="">{{show.rating.average}}/10
+            <div class="rating"><img class="imdb-img" src="assets/images/imdb.png" alt="imdb-image">{{show.rating.average}}/10
             </div>
         </div>
     </div>

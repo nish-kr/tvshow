@@ -8,9 +8,9 @@ describe('GenreComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ GenreComponent ]
+      declarations: [GenreComponent]
     })
-    .compileComponents();
+      .compileComponents();
   });
 
   beforeEach(() => {
@@ -21,5 +21,29 @@ describe('GenreComponent', () => {
 
   it('should create', () => {
     expect(component).toBeTruthy();
+  });
+
+  it(`testing startIndex variable`, () => {
+    expect(component.startIndex).toEqual(0);
+  });
+
+  it(`testing endIndex variable`, () => {
+    expect(component.endIndex).toEqual(0);
+  });
+
+  it(`testing shows variable`, () => {
+    expect(component.shows).toBeUndefined;
+  });
+
+  it(`testing genreName variable`, () => {
+    expect(component.genreName).toEqual('');
+  });
+
+  it('testing prev function', () => {
+    expect(component.prev()).toBe();
+  });
+
+  it('testing next function', () => {
+    expect(component.next()).toBe();
   });
 });

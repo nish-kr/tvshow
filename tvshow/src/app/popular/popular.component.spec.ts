@@ -25,4 +25,24 @@ describe('PopularComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it(`testing listOfShows variable`, () => {
+    expect(component.listOfShows).toEqual([]);
+  });
+
+  it(`testing showBasedOnGenres variable`, () => {
+    expect(component.showBasedOnGenres).toEqual({});
+  });
+
+  it(`testing genres variable`, () => {
+    expect(component.genres).toEqual([]);
+  });
+
+  it('testing getAllShows function', () => {
+    expect(component.getAllShows()).toBe();
+  });
+
+  it('testing getShowsOnGenres function', () => {
+    expect(component.getShowsOnGenres()).toBe();
+  });
 });

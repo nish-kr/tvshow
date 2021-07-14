@@ -7,17 +7,17 @@ import { BehaviorSubject } from 'rxjs';
 export class SharedService {
 
   private showId = new BehaviorSubject('1');
-  private search = new BehaviorSubject('test');
+  private search = new BehaviorSubject('flash');
   sharedShowId = this.showId.asObservable();
   searchResult = this.search.asObservable();
 
   constructor() { }
 
   nextShowId(showId: string) {
-    this.showId.next(showId)
+    this.showId.next(showId);
   }
 
   nextSearchResult(search: string) {
-    this.search.next(search)
+    this.search.next(search);
   }
 }

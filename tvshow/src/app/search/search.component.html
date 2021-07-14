@@ -1,13 +1,13 @@
 <div class="search-container">
-    <a href="popular">Home (Popular Shows)</a> / <span>Search Results</span>
+    <span class="home" (click)="home()">Home (Popular Shows)</span> / <span>Search Results</span>
     <h1>Search Results</h1>
     <div class="cards" *ngIf="searchResult">
-        <div *ngFor="let show of searchResult; let i = index">
-            <div (click)="setShowDetails(show)" class="result">
-                <div>
-                    <img *ngIf="show.show.image" src="{{show.show.image.medium}}" alt="">
+        <div *ngFor="let show of searchResult">
+            <div (click)="setShowDetails(show.show.id)" class="result row">
+                <div class="col-12 col-sm-5">
+                    <img *ngIf="show.show.image" src="{{show.show.image.medium}}" alt="show-image">
                 </div>
-                <div class="details">
+                <div class="details col-12 col-sm-7">
                     <h1>{{show.show.name}}</h1>
                     <h2>IMDB: {{show.show.rating.average}}/10</h2>
                     <h2>Premiered on: {{show.show.premiered}}</h2>
@@ -15,7 +15,7 @@
             </div>
         </div>
     </div>
-    <div class="no-results" *ngIf="!searchResult.length">
+    <div class="no-results" *ngIf="searchResult && !searchResult.length">
         <span>
             Oops!<br> No Movies found.
         </span>

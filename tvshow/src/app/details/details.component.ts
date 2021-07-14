@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { HttpService } from '../services/http.service';
 import { SharedService } from '../services/shared.service';
 
@@ -13,14 +14,13 @@ export class DetailsComponent implements OnInit {
   showId: any;
   constructor(
     private http: HttpService,
-    private shared: SharedService
+    private shared: SharedService,
+    private router: Router
   ) { }
 
   ngOnInit(): void {
-    console.log(this.showDetails);
-
     if (!this.showDetails) {
-      // Getting show details from local storage and parsing it into an object
+      // Getting show details from shared service and parsing it into an object
       this.shared.sharedShowId.subscribe(
         res => {
           this.showId = res;
@@ -49,5 +49,12 @@ export class DetailsComponent implements OnInit {
    */
   back() {
     window.history.back();
+  }
+
+  /**
+   * Home function to redirect user to home page ( popular page )
+   */
+  home() {
+    this.router.navigateByUrl('popular');
   }
 }

@@ -3,11 +3,11 @@
         <h1><a href="popular">TV Shows</a></h1>
     </div>
     <div class="header-search">
-        <input type="text" placeholder="Search" [(ngModel)]="searchQuery" (keyup.enter)="search()">
-        <button [disabled]="!searchQuery" (click)="search()">Search</button>
+        <input type="text" placeholder="Search" [(ngModel)]="searchQuery" (keyup.enter)="navigateToSearch(searchQuery)">
+        <button [disabled]="!searchQuery" (click)="navigateToSearch(searchQuery)">Search</button>
     </div>
 </div>
 <router-outlet></router-outlet>
 <div class="footer">
-    @Copyright 2020 - Tv Shows
+    @Copyright 2021 - Tv Shows
 </div>

@@ -1,19 +1,19 @@
-<div *ngIf="showDetails" class="details-container">
-    <div class="back-breadcrums">
+<div *ngIf="showDetails" class="details-container row">
+    <div class="back-breadcrums col-12">
         <button mat-raised-button (click)="back()">Back</button>
-        <a href="popular">Home (Popular Shows)</a> / <span>{{showDetails.name}}</span>
+        <span class="home" (click)="home()">Home (Popular Shows)</span> / <span>{{showDetails.name}}</span>
     </div>
-    <div class="details">
-        <img src="{{showDetails.image.original}}" alt="">
-        <div class="details-text">
+    <div class="details row col-12">
+        <img class="col-12 col-sm-6" src="{{showDetails.image.original}}" alt="show-image">
+        <div class="details-text col-12 col-sm-6">
             <h2>{{showDetails.name}}</h2>
-            <div> <i>IMDB Rating: </i>{{showDetails.rating.average}}/10</div>
-            <div> <i>Premiered On: </i>{{showDetails.premiered}}</div>
-            <div> <i>Type: </i>{{showDetails.type}}</div>
-            <div> <i>Genres: </i>{{showDetails.genres}}</div>
-            <div> <i>Status: </i>{{showDetails.status}}</div>
-            <div> <i>Runtine: </i>{{showDetails.runtime}} minutes</div>
-            <div><span [innerHTML]="showDetails.summary"></span></div>
+            <p> <span class="title">IMDB Rating: </span>{{showDetails.rating.average}}/10</p>
+            <p> <span class="title">Premiered On: </span>{{showDetails.premiered}}</p>
+            <p> <span class="title">Type: </span>{{showDetails.type}}</p>
+            <p> <span class="title">Genres: </span>{{showDetails.genres}}</p>
+            <p> <span class="title">Status: </span>{{showDetails.status}}</p>
+            <p> <span class="title">Runtime: </span>{{showDetails.runtime}} minutes</p>
+            <p><span [innerHTML]="showDetails.summary"></span></p>
         </div>
     </div>
 </div>

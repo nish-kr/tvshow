@@ -10,9 +10,9 @@ describe('ShowCardComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       imports: [RouterTestingModule],
-      declarations: [ ShowCardComponent ]
+      declarations: [ShowCardComponent]
     })
-    .compileComponents();
+      .compileComponents();
   });
 
   beforeEach(() => {
@@ -23,5 +23,13 @@ describe('ShowCardComponent', () => {
 
   it('should create', () => {
     expect(component).toBeTruthy();
+  });
+
+  it(`testing shows variable`, () => {
+    expect(component.shows).toEqual([]);
+  });
+
+  it('testing getShowDetails function', () => {
+    expect(component.getShowDetails('')).toBe();
   });
 });
