@@ -1,6 +1,6 @@
 # Tvshow
 
-This project is a TV Show website which contains all the TV Shows based on Genres. You can also search for TV Shows, and get show details. This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.1.0. The API used are available at [TV Shows](https://www.tvmaze.com/api)
+This project is a TV Show website which contains all the TV Shows based on Genres. You can also search for TV Shows, and get show details. This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.1.0. The APIs used are available at [TVMAZE API](https://www.tvmaze.com/api)
 
 ## Development server
 
@@ -27,7 +27,6 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
 
 ## Further Updates
--
 If I had more time I would have added/updated following things in the project:
 
 1. Add More Features from the API, e.g. show Cast & Crew details on Details Page.
